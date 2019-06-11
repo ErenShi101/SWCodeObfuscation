@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B0793B7122AF879900DD9B47 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0793B7022AF879900DD9B47 /* main.m */; };
 		B0793B7922AF8DD400DD9B47 /* libclang.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B0793B7822AF8DD400DD9B47 /* libclang.dylib */; };
+		B0793B8522AF926700DD9B47 /* SWObfuscationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B0793B8422AF926700DD9B47 /* SWObfuscationTool.m */; };
+		B0793B8822AFA08000DD9B47 /* SWClangTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B0793B8722AFA08000DD9B47 /* SWClangTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +36,10 @@
 		B0793B8022AF8E9F00DD9B47 /* CXErrorCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXErrorCode.h; sourceTree = "<group>"; };
 		B0793B8122AF8E9F00DD9B47 /* Index.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Index.h; sourceTree = "<group>"; };
 		B0793B8222AF8E9F00DD9B47 /* Platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Platform.h; sourceTree = "<group>"; };
+		B0793B8322AF926700DD9B47 /* SWObfuscationTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWObfuscationTool.h; sourceTree = "<group>"; };
+		B0793B8422AF926700DD9B47 /* SWObfuscationTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWObfuscationTool.m; sourceTree = "<group>"; };
+		B0793B8622AFA08000DD9B47 /* SWClangTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWClangTool.h; sourceTree = "<group>"; };
+		B0793B8722AFA08000DD9B47 /* SWClangTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWClangTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,10 @@
 			isa = PBXGroup;
 			children = (
 				B0793B7B22AF8E3000DD9B47 /* clang-c */,
+				B0793B8322AF926700DD9B47 /* SWObfuscationTool.h */,
+				B0793B8422AF926700DD9B47 /* SWObfuscationTool.m */,
+				B0793B8622AFA08000DD9B47 /* SWClangTool.h */,
+				B0793B8722AFA08000DD9B47 /* SWClangTool.m */,
 			);
 			path = "Clang Tools";
 			sourceTree = "<group>";
@@ -130,6 +140,7 @@
 		B0793B6522AF879900DD9B47 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SW;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = skyline;
 				TargetAttributes = {
@@ -161,6 +172,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0793B7122AF879900DD9B47 /* main.m in Sources */,
+				B0793B8522AF926700DD9B47 /* SWObfuscationTool.m in Sources */,
+				B0793B8822AFA08000DD9B47 /* SWClangTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SWObfuscationTool.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        [SWObfuscationTool obfuscateAtDir:@"\/Users\/eren\/Everest\/rmc-mobile-ios\/nxrmc\/nxrmc\/NXNXLOperationManager.m" prefixes:nil progress:nil completion:nil];
         // insert code here...
         NSLog(@"Hello, World!");
     }
