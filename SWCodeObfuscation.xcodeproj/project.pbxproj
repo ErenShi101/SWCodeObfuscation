@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B0793B7122AF879900DD9B47 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0793B7022AF879900DD9B47 /* main.m */; };
+		B0793B7922AF8DD400DD9B47 /* libclang.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B0793B7822AF8DD400DD9B47 /* libclang.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,14 @@
 /* Begin PBXFileReference section */
 		B0793B6D22AF879900DD9B47 /* SWCodeObfuscation */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SWCodeObfuscation; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0793B7022AF879900DD9B47 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B0793B7822AF8DD400DD9B47 /* libclang.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libclang.dylib; path = Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib; sourceTree = DEVELOPER_DIR; };
+		B0793B7C22AF8E9F00DD9B47 /* Documentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Documentation.h; sourceTree = "<group>"; };
+		B0793B7D22AF8E9F00DD9B47 /* CXString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXString.h; sourceTree = "<group>"; };
+		B0793B7E22AF8E9F00DD9B47 /* CXCompilationDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXCompilationDatabase.h; sourceTree = "<group>"; };
+		B0793B7F22AF8E9F00DD9B47 /* BuildSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildSystem.h; sourceTree = "<group>"; };
+		B0793B8022AF8E9F00DD9B47 /* CXErrorCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXErrorCode.h; sourceTree = "<group>"; };
+		B0793B8122AF8E9F00DD9B47 /* Index.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Index.h; sourceTree = "<group>"; };
+		B0793B8222AF8E9F00DD9B47 /* Platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Platform.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0793B7922AF8DD400DD9B47 /* libclang.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +53,7 @@
 			children = (
 				B0793B6F22AF879900DD9B47 /* SWCodeObfuscation */,
 				B0793B6E22AF879900DD9B47 /* Products */,
+				B0793B7722AF8DD400DD9B47 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +68,40 @@
 		B0793B6F22AF879900DD9B47 /* SWCodeObfuscation */ = {
 			isa = PBXGroup;
 			children = (
+				B0793B7A22AF8E2500DD9B47 /* Clang Tools */,
 				B0793B7022AF879900DD9B47 /* main.m */,
 			);
 			path = SWCodeObfuscation;
+			sourceTree = "<group>";
+		};
+		B0793B7722AF8DD400DD9B47 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B0793B7822AF8DD400DD9B47 /* libclang.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B0793B7A22AF8E2500DD9B47 /* Clang Tools */ = {
+			isa = PBXGroup;
+			children = (
+				B0793B7B22AF8E3000DD9B47 /* clang-c */,
+			);
+			path = "Clang Tools";
+			sourceTree = "<group>";
+		};
+		B0793B7B22AF8E3000DD9B47 /* clang-c */ = {
+			isa = PBXGroup;
+			children = (
+				B0793B7F22AF8E9F00DD9B47 /* BuildSystem.h */,
+				B0793B7E22AF8E9F00DD9B47 /* CXCompilationDatabase.h */,
+				B0793B8022AF8E9F00DD9B47 /* CXErrorCode.h */,
+				B0793B7D22AF8E9F00DD9B47 /* CXString.h */,
+				B0793B7C22AF8E9F00DD9B47 /* Documentation.h */,
+				B0793B8122AF8E9F00DD9B47 /* Index.h */,
+				B0793B8222AF8E9F00DD9B47 /* Platform.h */,
+			);
+			path = "clang-c";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +283,13 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 987Y5M3S28;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/SWCodeObfuscation/**";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"$(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib",
+				);
+				LIBRARY_SEARCH_PATHS = "$(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -250,6 +299,13 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 987Y5M3S28;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/SWCodeObfuscation/**";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"$(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib",
+				);
+				LIBRARY_SEARCH_PATHS = "$(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
